@@ -2,7 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/Preetam/cwe.svg)](https://pkg.go.dev/github.com/Preetam/cwe)
 
-Go package of CWE IDs and metadata. The list is generated from a CSV from https://cwe.mitre.org/data/downloads.html.
+Go package of CWE IDs and metadata. The list is generated from a CSV from the [Comprehensive CWE Dictionary](https://cwe.mitre.org/data/definitions/2000.html).
 
 ### Example
 
