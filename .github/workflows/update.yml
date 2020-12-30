@@ -33,3 +33,9 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: Update CWE list
+        reviewers: Preetam
