@@ -1,0 +1,34 @@
+name: Go
+
+on:
+
+jobs:
+
+  update:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.13
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Get dependencies
+      run: |
+        curl https://cwe.mitre.org/data/csv/2000.csv.zip > 2000.csv.zip
+        unzip -o -d generate 2000.csv.zip
+        rm 2000.csv.zip
+        go generate
+
+    - name: Generate
+      run: go generate
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
